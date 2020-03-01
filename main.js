@@ -70,7 +70,7 @@ var game = new Vue({
 
   	currentLocation: 'chambreroi',
   	displayInfo: '',
-  	title: 'Sunev (v0.4)',
+  	title: 'Sunaru (v0.4)',
 
   	inventaire: {
       // markers for progression or dialogues
