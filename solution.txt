@@ -1,0 +1,42 @@
+Afficher une carte qui montrer les tableaux déjà explorés (test conditionnel, div qui apparaissent ou pas).
+Code coloré, voir cartes de Lands of Lore.
+
+INTRODUCTION
+
+Le roi est malade
+La reine demande qu'on aille trouver le docteur
+Le docteur indique que le roi est empoisonné. Le docteur est impuissant. Il suggère d'aller trouver la sorcière.
+
+LA QUÊTE
+
+La sorcière peut aider, si on l'aide d'abord. Il faut aller aider "quelqu'un".
+On libère un animal étrange (dark side) d'un piège.
+La sorcière veut bien aider. Elle donne une liste d'ingrédients. Certains sont à trouver de "l'autre côté".
+
+RASSEMBLER INGRÉDIENTS CÔTÉ ROYAUME
+
+Oeufs : parler au fermer. Aider le fermier aux labours. Parler au fermier.
+Vers : Ramasser de l'or. Echanger l'or contre une pelle chez le fermier. Avec la pelle, creuser la plaine.
+Diamants: Au phare, attendre la nuit. Entrer dans la cachette. Prendre la bourse (qui contient le diamant) et la bougie.
+
+Indice : donner vers au pêcheur.
+
+FRANCHIR LA PORTE DES MONDES
+
+Les gardes refusent catégoriquement le passage. Pas de corruption, pas de supplications.
+Trouver l'entrer d'une grotte. Franchir le passage. Avec la bougie, s'éclairer. Sinon, mort.
+
+RASSEMBLER INGRÉDIENTS CÔTÉ EMPIRE
+
+Coeur de chène tortueux: Voler la hache du bucheron. Couper l'arbre centenaire avec la hache.
+Oeil de lynx : tuer un lynx, prélever un oeil.
+
+Indice : interroger (soit tirer les vers du nez à) la [baigneuse].
+
+RETOUR
+
+Donner les ingrédients à la sorcière.
+Attendre dehors.
+Revenir à la sorcière qui donne la potion.
+Aller la donner au roi.
+

@@ -1,0 +1,339 @@
+* {
+	box-sizing: border-box;
+	margin:0;
+	padding:0;
+}
+
+body {
+	font-family: 'Arvo', serif;
+}
+
+a {
+	text-decoration:none;
+	font-weight:bold;
+}
+
+::selection {
+	visibility: hidden;
+}
+
+/* ==================================== */
+
+#game {
+	width:500px;	
+	margin:4% auto 0px;	
+	background:#eee;
+	position: relative;
+	border:2px solid #333;
+}
+
+/* ==================================== */
+
+h1 {
+	background:#bbb;
+	text-align: center;
+	line-height:60px;
+	letter-spacing:1px;
+}
+
+.scene_container {
+	position: relative;
+	width:100%;
+	padding:20px 10px 0px;
+}
+
+/* ==================================== */
+/* SCENE CONTAINER CONTENT */
+/* ==================================== */
+
+.localisation {
+	font-weight:bold;
+	font-size:1.1em;
+	margin:5px 0px 10px 80px;	
+}
+
+.description {
+	height:75px;
+	margin:0px 0px 0px 80px;
+	font-weight:normal;
+}
+
+.compas {
+	padding: 5px;
+	width:65px;
+	height:65px;
+	position: relative;
+	border:2px solid #000;
+	border-radius:50%;
+	background:#fff;
+	position: absolute;
+	left:15px;
+	top:25px;
+	box-shadow: inset 6px 6px 22px -9px rgba(0,0,0,1),
+	6px 6px 6px -6px rgba(0,0,0,0.4);
+}
+
+.compas .reflet {
+	position: absolute;
+	width:65px;
+	height:65px;
+	border-radius:50%;
+	box-shadow: inset 2px 2px 1px -1px #fff;
+	top:0;
+	bottom:0;
+	left:0;
+	right:0;
+}
+
+.compas:after,
+.compas:before {
+	content:'';
+	display:block;
+	position: absolute;
+	top:50%;
+	left:50%;
+	height:2px;
+	width:18px;
+	background:#000;
+
+	
+}
+
+.compas:after {
+	transform:translate(-50%, -50%);
+}
+.compas:before {
+	transform:translate(-50%, -50%) rotate(90deg);
+}
+
+.compas div {
+	position: absolute;
+	width:20px;
+	height:20px;
+	text-transform: uppercase;
+	text-align: center;
+	color:#ccc;
+}
+
+.compas div.active {
+	font-weight:bold;
+	color:#000;
+}
+
+.compas .nord {
+	top:2px;
+	left:50%;
+	transform:translateX(-50%);
+}
+.compas .est {
+	right:2px;
+	top:50%;
+	transform:translateY(-50%);
+	
+}
+.compas .sud {
+	bottom:2px;
+	left:50%;
+	transform:translateX(-50%);
+}
+.compas .ouest {
+	left:2px;
+	top:50%;
+	transform:translateY(-50%);
+}
+
+
+/* ==================================== */
+
+.scene {
+	border: 2px solid #000;
+	margin: 0px auto 10px;
+	height:360px;
+	width:480px;
+}
+
+.scene img {
+	width:100%;
+	height:100%;
+	display:block;
+}
+
+/* ==================================== */
+
+.prompteur {
+	margin:10px auto;
+	width:480px;
+	position: relative;
+}
+
+.prompteur input {
+	position: absolute;
+	width:380px;	
+	right:0px;
+	height:25px;
+	padding:2px;
+	margin-top:-3px;
+}
+
+/* ==================================== */
+
+.reaction {
+	background:#ccc;
+	margin-top:10px;
+	padding:10px;
+	min-height:80px;
+}
+
+/* ==================================== */
+
+.inventaire {
+	text-align: center;
+	min-height:86px;
+	padding:10px;
+}
+
+.inventaire div {
+	display:inline-block;
+	width:60px;
+	height:60px;
+	border:1px solid #666;
+	margin:3px;
+}
+
+.inventaire div img {
+	width:100%;
+	height: 100%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ==================================== */
+/* PANNEAUX D'AIDE */
+/* ==================================== */
+
+#aide {
+	position: absolute;
+	top:0;
+	right:0;
+	left:0;
+	bottom:0;
+	width:100%;
+	height:100%;	
+	pointer-events:none;
+}
+
+
+
+#aide .infos {
+	width:100%;
+	height:100%;
+	margin:0 auto;
+	opacity:0;	
+	background:rgba(0,0,0,0.5);
+	transition: opacity 0.3s ease-in-out;
+	z-index:11;
+	pointer-events:none;
+}
+
+#aide .infos.active {
+	opacity:100;
+	pointer-events:auto;
+}
+
+.aidetoggler {
+	position: absolute;
+	top:4%;
+	right:25px;
+	width:70px;
+	background: #fff;
+	border:2px solid #000;
+	z-index:100;
+	text-align: center;
+	line-height:60px;
+	cursor:pointer;
+	transition: background 0.2s ease-in-out;
+	pointer-events:auto;
+}
+
+.aidetoggler:hover {
+	background: #ccc;
+}
+
+.aidetoggler.active {	
+	background: #fd6;
+}
+
+
+
+
+#aide .infos .panel {
+	position: absolute;
+	background: #fff;
+	width:30%;
+	max-height:90%;
+	overflow:auto;
+	min-width:400px;
+	padding:30px;
+	top:20px;
+	box-shadow:4px 8px 16px 2px rgba(0,0,0,0.5);
+	transition:top 0.3s ease-in-out;
+}
+
+#aide .infos.active .panel {
+	top:50px;
+}
+
+#aide .infos .panel h2 {
+	margin-bottom:1em;
+	border-bottom:2px dashed #ccc;
+}
+
+#aide .infos .panel h3 {
+	margin:1.5em 0 0.5em;
+
+}
+
+#aide .infos .panel p {
+	line-height:1.4em;
+	margin-bottom:1em;
+}
+
+#aide .infos .panel.left {
+	right:50%;
+	transform:translateX(-20px);
+}
+
+#aide .infos .panel.right {
+	left:50%;
+	transform:translateX(+20px);
+}
+
+
+#aide .infos ul {
+	list-style: circle;
+}
+
+#aide .infos ul li {
+	margin-left:20px;
+}
+
+
+
+
+

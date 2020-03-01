@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta charset="UTF-8">
+	<title>Sunev (v0.4)</title>
+	<link rel="stylesheet" href="./style.css">
+	<link href="https://fonts.googleapis.com/css?family=Acme|Arvo|Bree+Serif|Cabin|Noto+Serif|Signika" rel="stylesheet">
+</head>
+<body>
+	
+	<div id="game">
+		<!-- ============================================================= -->
+
+		<h1>{{title}}</h1>
+		<div class="scene_container">
+			<div class="localisation">{{locations[currentLocation].name}}</div>		<descripscene v-bind:texte="locations[currentLocation].initialDescription"></descripscene>
+			<compas v-bind:directions="locations[currentLocation].availDirections"></compas>
+		</div>
+		<scene v-bind:display="locations[currentLocation].image"></scene>
+		<div class="prompteur">
+			Que faire ? <input type="text" id="inputbox" v-on:keyup="getInput">	
+		</div>	
+		<reaction v-bind:display="displayInfo"></reaction>
+		<inventaire v-bind:contenu="inventaire"></inventaire>	
+
+		<!-- ============================================================= -->
+	</div>
+
+
+
+	<div id="aide">
+
+
+		<div class="aidetoggler" v-on:click="displayHelp = !displayHelp"  v-bind:class="{ active: displayHelp }">
+			AIDE
+		</div>
+
+
+		<div class="infos" v-bind:class="{ active: displayHelp }">
+			<div class="panel left">
+				<h2>Le jeu</h2>
+
+				<p>Sunev est un hommage au jeu «&nbsp;<a href="https://cpcrulez.fr/GamesTest/sram_1.htm" target="_blank">Sram</a>&nbsp» conçu par Jacques Hemonic, Serge Hauduc et Ludovic Hauduc, sorti en 1986 sur Amstrad CPC.</p>
+
+				<h3>Principe</h3>
+
+				<p>Le jeu se présente sous forme de tableaux au sein desquels on se déplace en utilisant les points cardinaux. Dans chaque tableau, il est possible d'effectuer certaines actions, de discuter avec des personnages.</p>
+
+				<h3>Comment faire ?</h3>
+
+				<p>Dans l'espace prévu à cet effet, écrivez ce que vous voulez faire. Par exemple «&nbspParler à la reine&nbsp». Un texte s'affichera vous indiquant le résulat de vos actions.</p>
+
+				<p>N'hésitez pas à essayer des synonymes&nbsp: «&nbspDiscuter avec la dame&nbsp» pourrait peut-être fonctionner.</p>
+
+
+
+
+			</div>
+
+			<div class="panel right">
+
+				<h2>Aide</h2>
+
+				
+
+				<h3>À savoir</h3>
+
+				<p>Rédigez vos questions en français. Les accents comptent !</p>
+
+				<h3>Commandes</h3>
+
+				
+				<p>Utilisez les points cardinaux pour vous déplacer&nbsp;: "Nord, Ouest, Est, Sud" ou leur forme raccourcie&nbsp;: "n, o, e, s".</p>	
+				<p>«&nbspRegarder&nbsp» vous donnera toujours plus d'informations sur le lieu où vous êtes.</p>
+
+				<p>«&nbspIndice&nbsp» ou «&nbsp;aide&nbsp;» vous donnera parfois une indication de ce qu'il vous faut faire dans ce lieu.</p>
+
+			</div>
+
+		</div>
+
+
+
+	</div>
+
+
+
+
+
+
+</body>
+<script src="./vue.min.js"></script>
+<script src="./main.js"></script>
+<script src="./aide.js"></script>
+</html>
+
+
+
